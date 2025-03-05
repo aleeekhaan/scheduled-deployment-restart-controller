@@ -1,0 +1,9 @@
+apiVersion: apps.k8s.scheduled-deployment-restart-controller.aliahmedkhan.local/v1alpha1
+kind: DeploymentRestartSchedule
+metadata:
+  labels:
+    app.kubernetes.io/name: scheduled-deployment-restart-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: deploymentrestartschedule-sample
+spec:
+  # TODO(user): Add fields here

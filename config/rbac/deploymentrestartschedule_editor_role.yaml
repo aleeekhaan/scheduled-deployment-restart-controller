@@ -1,0 +1,27 @@
+# permissions for end users to edit deploymentrestartschedules.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: scheduled-deployment-restart-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: deploymentrestartschedule-editor-role
+rules:
+- apiGroups:
+  - apps.k8s.scheduled-deployment-restart-controller.aliahmedkhan.local
+  resources:
+  - deploymentrestartschedules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps.k8s.scheduled-deployment-restart-controller.aliahmedkhan.local
+  resources:
+  - deploymentrestartschedules/status
+  verbs:
+  - get
