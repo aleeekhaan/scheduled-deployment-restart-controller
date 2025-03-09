@@ -28,8 +28,11 @@ type DeploymentRestartScheduleSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of DeploymentRestartSchedule. Edit deploymentrestartschedule_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// annotations - Annotations to be watched
+	Annotations map[string]string `json:"annotation,omitempty"`
+
+	// schedule - restart schedule
+	Schedule string `json:"schedule,omitempty"`
 }
 
 // DeploymentRestartScheduleStatus defines the observed state of DeploymentRestartSchedule
